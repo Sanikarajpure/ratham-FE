@@ -1,9 +1,17 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home/Home";
 
 import "./App.css";
 
 function App() {
-  return <>Hello</>;
+  return (
+    <>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
