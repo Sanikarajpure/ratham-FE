@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useNavigate } from "react-router-dom";
 
 const UserInfo = () => {
-  const User = useSelector((state) => (state.User ? state.User : ""));
+  const User = useSelector((state) => (state.User ? state.User : null));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!User.name) {
+      navigate("/");
+    }
+  }, [User, navigate]);
   return (
     <div className="h-screen flex justify-center  items-center ">
       <div className="  ">
