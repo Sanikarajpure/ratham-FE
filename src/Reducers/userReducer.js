@@ -1,15 +1,19 @@
-import { SET_USER } from "../Actions/types";
+import { SET_USERNAME, SET_USERAGE } from "../Actions/types";
 let userDefault = {
-  firstname: null,
-  lastname: null,
+  name: null,
   age: null,
 };
 const userReducer = (state = userDefault, action) => {
   switch (action.type) {
-    case SET_USER:
+    case SET_USERNAME:
       return {
         ...state,
-        ...action.payload,
+        name: action.payload,
+      };
+    case SET_USERAGE:
+      return {
+        ...state,
+        age: action.payload,
       };
 
     default:

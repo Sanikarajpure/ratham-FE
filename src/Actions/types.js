@@ -1,1 +1,2 @@
-export const SET_USER = "set_user";
+export const SET_USERNAME = "set_username";
+export const SET_USERAGE = "set_userage";
